@@ -17,6 +17,7 @@ dependencies:
   - click=6.7
   - cloudpickle=0.5.3
   - curl=7.60.0
+  - cycler=0.10.0
   - cytoolz=0.9.0.1
   - dask=0.18.1
   - dask-core=0.18.1
@@ -24,6 +25,7 @@ dependencies:
   - distributed=1.22.0
   - entrypoints=0.2.3
   - fasteners=0.14.1
+  - freetype=2.8.1
   - h5netcdf=0.6.1
   - h5py=2.8.0
   - hdf4=4.2.13
@@ -42,10 +44,12 @@ dependencies:
   - jupyter_core=4.4.0
   - jupyterlab=0.32.1
   - jupyterlab_launcher=0.10.5
+  - kiwisolver=1.0.1
   - krb5=1.14.6
   - libcxx=6.0.0
   - libiconv=1.15
   - libnetcdf=4.6.1
+  - libpng=1.6.34
   - libsodium=1.0.16
   - libssh2=1.8.0
   - libxml2=2.9.8
@@ -53,6 +57,7 @@ dependencies:
   - llvmdev=6.0.0
   - locket=0.2.0
   - markupsafe=1.0
+  - matplotlib=2.2.2
   - mistune=0.8.3
   - monotonic=1.5
   - msgpack-python=0.5.6
