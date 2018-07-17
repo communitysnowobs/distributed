@@ -12,4 +12,4 @@ RUN useradd --create-home -s /bin/bash jupyter && adduser jupyter sudo
 WORKDIR /home/jupyter
 USER jupyter
 # Add notebook config
-ADD jupyter_notebook_config.py notebook_config.py
+ADD notebook_config.py notebook_config.py
