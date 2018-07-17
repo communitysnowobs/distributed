@@ -4,16 +4,17 @@
 
 When setting up terraform for the first time, make sure that your credentials (gcloud or aws) are setup on your computer, so that terraform can find them.
 
-1. Navigate to source folder
+1. Download [terraform](https://www.terraform.io/downloads.html) and move to `/bin` or other location on the PATH.
+2. Navigate to source folder
 ```bash
 cd ./aws
 ```
-2. Change the default values of `variables.tf` if desired
-3. Initialize Terraform
+3. Change the default values of `variables.tf` if desired
+4. Initialize Terraform
 ```bash
 terraform init
 ```
-4. Apply configuration
+5. Apply configuration
 ```bash
 terraform apply
 ```
