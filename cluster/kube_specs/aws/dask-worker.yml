@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dask-worker
+spec:
+  replicas: 50
+  selector:
+    matchLabels:
+      app: dask
+      role: worker
+  template:
+    metadata:
+      labels:
+        app: dask
+        role: worker
+    spec:
+      containers:
+      - name: dask-worker
+        image: jonahjoughin/dask-docker:latest
+        imagePullPolicy: Always
+        command: ["dask-worker"]
+        args: ["dask-scheduler:8786", "--memory-limit", "1.6e9", "--nthreads", "1", "--nprocs", "1"]
+        resources:
+          requests:
+            memory: "800Mi"
+            cpu: "500m"
+          limits:
+            memory: "1600Mi"
+            cpu: "750m"
