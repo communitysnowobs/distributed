@@ -8,7 +8,7 @@ conda env create -f environment.yml
 ```
 2. Activate environment.
 ```
-source activate pangeo
+source activate pangeo-cluster
 ```
 3. Run Jupter Lab.
 ```

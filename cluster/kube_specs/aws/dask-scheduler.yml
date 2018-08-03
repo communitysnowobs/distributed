@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: dask-scheduler
-        image: jonahjoughin/dask-docker:latest
+        image: jonahjoughin/pangeo-cluster:latest
         imagePullPolicy: Always
         command: ["/bin/sh"]
         args: ["-c", "source activate dask-docker; dask-scheduler"]
@@ -47,8 +47,8 @@ spec:
         - containerPort: 8786
         resources:
           requests:
-            memory: "512Mi"
-            cpu: "250m"
+            memory: "4096Mi"
+            cpu: "1500m"
           limits:
-            memory: "1024Mi"
-            cpu: "500m"
+            memory: "8192Mi"
+            cpu: "3000m"

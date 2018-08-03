@@ -33,16 +33,16 @@ spec:
     spec:
       containers:
       - name: jupyter-server
-        image: jonahjoughin/dask-docker:latest
+        image: jonahjoughin/pangeo-cluster:latest
         imagePullPolicy: Always
         command: ["jupyter"]
-        args: ["notebook", "--config", "notebook_config.py"]
+        args: ["notebook", "--allow-root", "--config", "notebook_config.py"]
         ports:
         - containerPort: 8888
         resources:
           requests:
-            memory: "1000Mi"
-            cpu: "500m"
-          limits:
-            memory: "2000Mi"
+            memory: "4096Mi"
             cpu: "1000m"
+          limits:
+            memory: "8192Mi"
+            cpu: "2000m"

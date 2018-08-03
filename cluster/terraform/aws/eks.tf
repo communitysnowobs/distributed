@@ -48,7 +48,7 @@ resource "aws_launch_configuration" "cluster" {
   associate_public_ip_address = true
   iam_instance_profile        = "${aws_iam_instance_profile.node.name}"
   image_id                    = "${data.aws_ami.node.id}"
-  instance_type               = "t2.medium"
+  instance_type               = "${var.node-type}"
   name_prefix                 = "node"
   security_groups             = ["${aws_security_group.cluster-node.id}"]
   user_data_base64            = "${base64encode(local.userdata)}"
@@ -59,10 +59,10 @@ resource "aws_launch_configuration" "cluster" {
 }
 
 resource "aws_autoscaling_group" "cluster" {
-  desired_capacity     = 20
+  desired_capacity     = 5
   launch_configuration = "${aws_launch_configuration.cluster.id}"
-  max_size             = 20
-  min_size             = 20
+  max_size             = 5
+  min_size             = 5
   name                 = "${var.cluster-name}"
   vpc_zone_identifier  = ["${aws_subnet.cluster.*.id}"]
   tag {

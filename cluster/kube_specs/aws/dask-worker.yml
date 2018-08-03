@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: dask-worker
 spec:
-  replicas: 50
+  replicas: 33
   selector:
     matchLabels:
       app: dask
@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
       - name: dask-worker
-        image: jonahjoughin/dask-docker:latest
+        image: jonahjoughin/pangeo-cluster:latest
         imagePullPolicy: Always
         command: ["dask-worker"]
         args: ["dask-scheduler:8786", "--memory-limit", "1.6e9", "--nthreads", "1", "--nprocs", "1"]
         resources:
           requests:
-            memory: "800Mi"
-            cpu: "500m"
+            memory: "2048Mi"
+            cpu: "1000m"
           limits:
-            memory: "1600Mi"
-            cpu: "750m"
+            memory: "4096Mi"
+            cpu: "1500m"
